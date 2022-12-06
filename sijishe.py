@@ -17,7 +17,7 @@ def check_in_sijishe():
         driver.find_element_by_xpath("//*[@type='submit']").click()
         time.sleep(3)
         driver.get("https://sijisheb.com/k_misign-sign.html")
-        if driver.find_element_by_xpath("//*[@class='btn J_chkitot']") != [] :
+        if driver.find_elements_by_xpath("//*[@class='btn J_chkitot']") != []:
         driver.find_element_by_xpath("//*[@class='btn J_chkitot']").click()
         print('司机社签到')
         else         
