@@ -11,6 +11,7 @@ def check_in_javbus():
         driver.get("https://www.javbus.com/forum/member.php?mod=logging&action=login")
         driver.find_element_by_xpath("//*[@name='username']").send_keys(username)
         driver.find_element_by_xpath("//*[@name='password']").send_keys(password)
+        time.sleep(5)
         valid = Ocr_Captcha(driver, "//*[@class='vm']", img_path)
         driver.find_element_by_xpath("//*[@name='seccodeverify']").send_keys(valid)
         driver.find_element_by_xpath("//*[@type='submit']").click()
