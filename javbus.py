@@ -16,6 +16,7 @@ def check_in_javbus():
         driver.find_element_by_xpath("//*[@name='seccodeverify']").send_keys(valid)
         driver.find_element_by_xpath("//*[@type='submit']").click()
         time.sleep(3)
+        driver.get("https://www.javbus.com/forum/")
         print('javbus签到成功')
     except:
         raise
