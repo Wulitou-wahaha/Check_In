@@ -15,6 +15,7 @@ def check_in_javbus():
         valid = Ocr_Captcha(driver, "//*[@class='vm']", img_path)
         driver.find_element_by_xpath("//*[@name='seccodeverify']").send_keys(valid)
         driver.find_element_by_xpath("//*[@type='submit']").click()
+        time.sleep(3)
         print('javbus签到成功')
     except:
         raise
