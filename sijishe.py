@@ -17,7 +17,7 @@ def check_in_sijishe():
         driver.find_element_by_xpath("//*[@type='submit']").click()
         time.sleep(3)
         if driver.find_element_by_xpath("//*[@class='btn btnvisted']") != []:
-        print("今日已签到")        
+        print('今日已签到')        
     except:
         raise
     finally:
