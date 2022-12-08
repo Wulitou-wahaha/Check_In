@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import urllib
+import urllib.request
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--no-sandbox') # 解决DevToolsActivePort文件不存在的报错
