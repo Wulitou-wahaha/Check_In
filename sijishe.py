@@ -15,13 +15,10 @@ def check_in_sijishe():
         driver.find_element_by_xpath("//input[@name='password']").send_keys(password)
         time.sleep(3)
         driver.find_element_by_xpath("//button[@type='submit']").click()
-        time.sleep(3)
-        driver.get("https://sijisheb.com/k_misign-sign.html")
-        try:
+        time.sleep(5)
+#       driver.get("https://sijisheb.com/k_misign-sign.html")
         driver.find_element_by_id("JD_sign").click()
         print('司机社签到')
-        except:
-        print('今日已签到')
     except:
         raise
     finally:

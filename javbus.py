@@ -16,8 +16,11 @@ def check_in_javbus():
         driver.find_element_by_xpath("//button[@type='submit']").click()
         time.sleep(5)
 #        driver.get("https://www.javbus.com/forum/home.php?mod=spacecp&ac=credit")
+        try:
         driver.find_element_by_id("ct")
         print('登录成功')
+        except:
+        print('登陆失败')
     except:
         raise
     finally:
