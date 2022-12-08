@@ -8,6 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import urllib
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--no-sandbox') # 解决DevToolsActivePort文件不存在的报错
@@ -31,16 +32,7 @@ def is_visible(driver, locator, timeout=10):
         return False
 
 def Ocr_Captcha(driver, propertery, img_path): # 验证码识别
-    driver.save_screenshot(img_path)
-    img = Image.open(img_path)
-    location = propertery.location
-    size = propertery.size
-    left = location['x']
-    top = location['y']
-    right = left + size['width']
-    bottom = top + size['height']
-    image = img.crop((left, top, right, bottom))  # 左、上、右、下
-    image.save(img_path)
+    urllib.urlretrieve(propertery.get_attribute('src'), img_path)
     ocr = ddddocr.DdddOcr()
     with open(img_path, 'rb') as f:
         img_bytes = f.read()
