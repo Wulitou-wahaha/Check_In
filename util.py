@@ -31,8 +31,9 @@ def is_visible(driver, locator, timeout=10):
         return False
 
 def Ocr_Captcha(driver, propertery, img_path): # 验证码识别
-    driver.get(propertery.get_attribute("src"))
-    driver.save_screenshot(img_path)
+    driver1.getget_web_driver()
+    driver1.get(propertery.get_attribute("src"))
+    driver1.save_screenshot(img_path)
 #    img = Image.open(img_path)
 #    location = propertery.location
 #   size = propertery.size
@@ -46,6 +47,7 @@ def Ocr_Captcha(driver, propertery, img_path): # 验证码识别
     with open(img_path, 'rb') as f:
         img_bytes = f.read()
     res = ocr.classification(img_bytes)
+    driver1.quit()
     return res
 
 class Track(object):
