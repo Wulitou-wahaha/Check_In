@@ -32,7 +32,7 @@ def is_visible(driver, locator, timeout=10):
         return False
 
 def Ocr_Captcha(driver, propertery, img_path): # 验证码识别
-    urllib.urlretrieve(propertery.get_attribute('src'), img_path)
+    urllib.request.urlretrieve(propertery.get_attribute('src'), img_path)
     ocr = ddddocr.DdddOcr()
     with open(img_path, 'rb') as f:
         img_bytes = f.read()
