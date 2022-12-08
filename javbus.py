@@ -13,7 +13,7 @@ def check_in_javbus():
         propertery=WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//img[@class='vm' and @width='100']")))
         valid = Ocr_Captcha(driver, propertery, img_path)
         driver.find_element_by_xpath("//input[@name='seccodeverify']").send_keys(valid)
-        driver.find_element_by_name("//button[@type='submit']").click()
+        driver.find_element_by_xpath("//button[@type='submit']").click()
         time.sleep(3)
         driver.get("https://www.javbus.com/forum/")
         print('javbus签到成功')
