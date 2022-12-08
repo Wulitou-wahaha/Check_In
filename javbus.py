@@ -11,7 +11,7 @@ def check_in_javbus():
         driver.find_element_by_xpath("//input[@name='username']").send_keys(username)
         driver.find_element_by_xpath("//input[@name='password']").send_keys(password)
         propertery=WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//img[@class='vm' and @width='100']")))
-        img_path=propertery.get_attribute(src)
+        img_path=propertery.get_attribute("src")
         valid = Ocr_Captcha(driver, propertery, img_path)
         driver.find_element_by_xpath("//input[@name='seccodeverify']").send_keys(valid)
         driver.find_element_by_name("//button[@type='submit']").click()
