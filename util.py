@@ -30,8 +30,9 @@ def is_visible(driver, locator, timeout=10):
     except TimeoutException:
         return False
 
-def Ocr_Captcha(driver, locator, img_path): # 验证码识别
+def Ocr_Captcha(driver, locator): # 验证码识别
     propertery = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, locator)))
+    img_path=propertery.get_attribute(src)
     driver.save_screenshot(img_path)
     img = Image.open(img_path)
     location = propertery.location
